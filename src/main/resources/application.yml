@@ -1,0 +1,43 @@
+spring:
+  application:
+      name: client
+  profiles:
+    active: "prod"
+
+server:
+  port: 8089
+
+logging:
+  level:
+    root: INFO
+
+
+
+---
+
+spring:
+  profiles: dev
+
+endpoint:
+  url: http://localhost:8083
+
+address:
+  street : market
+  city : polamuru
+  country: India
+
+---
+
+spring:
+  profiles: prod
+
+endpoint:
+  url: http://localhost:8083
+
+address:
+  street : market
+  city : polamuru
+  country: United states of Begumpet
+
+
+
