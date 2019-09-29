@@ -1,10 +1,16 @@
 package com.example.client.model;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@Configuration
+@PropertySource("classpath:application.properties")
+@ConfigurationProperties(prefix = "address")
 public class Address {
 
   private String street;
   private String city;
-  private int zipcode;
   private String country;
 
   public String getStreet() {
@@ -21,14 +27,6 @@ public class Address {
 
   public void setCity(String city) {
     this.city = city;
-  }
-
-  public int getZipcode() {
-    return zipcode;
-  }
-
-  public void setZipcode(int zipcode) {
-    this.zipcode = zipcode;
   }
 
   public String getCountry() {
@@ -48,8 +46,6 @@ public class Address {
         + ", city='"
         + city
         + '\''
-        + ", zipcode="
-        + zipcode
         + ", country='"
         + country
         + '\''
