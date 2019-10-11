@@ -1,6 +1,8 @@
 package com.example.client.util;
 
+import com.example.client.filter.JwtFilter;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
@@ -26,5 +28,16 @@ public class RestTemplateClient {
     requestFactory.setProxy(proxy);
 
     return new RestTemplate(requestFactory);
+  }
+
+  @Bean
+  public FilterRegistrationBean<JwtFilter> loggingFilter() {
+    FilterRegistrationBean<JwtFilter> registrationBean = new FilterRegistrationBean<>();
+
+    registrationBean.setFilter(new JwtFilter());
+    registrationBean.addUrlPatterns("/address/*");
+    registrationBean.addUrlPatterns("/client-service/*");
+
+    return registrationBean;
   }
 }
