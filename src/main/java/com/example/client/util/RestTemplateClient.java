@@ -30,7 +30,7 @@ public class RestTemplateClient {
     return new RestTemplate(requestFactory);
   }
 
-  @Bean
+  //@Bean
   public FilterRegistrationBean<JwtFilter> loggingFilter() {
     FilterRegistrationBean<JwtFilter> registrationBean = new FilterRegistrationBean<>();
 

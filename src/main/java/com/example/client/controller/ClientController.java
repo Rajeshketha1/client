@@ -17,6 +17,8 @@ public class ClientController {
   public String clientCreation(@PathVariable String clientId) {
     LOGGER.info("checking clientId::::{}", clientId);
 
-    return "Hello client service";
+    System.out.println("Hello Rajesh Ketha Welcome to docker world");
+
+    return "Hello Rajesh ketha Welcome to docker world";
   }
 }
