@@ -17,6 +17,19 @@ Step 4:-
 docker run aa45adf751c9(ImageID)
 
 
+To verify the list of containers
+
+docker ps
+
+TO stop the container
+
+docker stop (containerID)
+
+to verify the logs
+
+docker logs containerID
+
+
 Stopping the containers
 docker container stop  4dd439717559 a03f28be98cc
 
@@ -25,3 +38,5 @@ docker container rm  4dd439717559 a03f28be98cc
 
 Removing Images
 docker image rm 4dd439717559 a03f28be98cc
+
+
